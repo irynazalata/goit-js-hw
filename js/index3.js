@@ -231,6 +231,11 @@
 //   products: [],
 //   amount: 0,
 //   price: 0,
+//   add(product) {
+//     this.products.push(product.name);
+//     this.amount += 1;
+//     this.price += product.price;
+// };
 // };
 
 // const milk = {
@@ -246,20 +251,144 @@
 //   price: 20,
 // };
 
-// const add = function (product) {
-//   this.products.push(product.name);
-//   this.amount += 1;
-//   this.price += product.price;
-// };
-
-// add(bread);
-// add(milk);
-// add(egg);
-// add(bread);
+// cart.add(bread);
+// cart.add(milk);
+// cart.add(egg);
+// cart.add(bread);
 // console.log(cart);
 // ============================================================================
-// =============================== HOMEWORK 3 ============================
 
+// const vehicle = {
+//   speed: 0,
+//   color: 'white',
+//   isEngineOn: false,
+//   isLightOn: false,
+//   speedOn(n) {
+//     if (this.isEngineOn) {
+//       return (this.speed += n);
+//     } else {
+//       console.log('Engine is not on, you cannot speed up');
+//     }
+//   },
+//   speedOff(n) {
+//     if (this.isEngineOn) {
+//       return (this.speed -= n);
+//     } else {
+//       console.log('Engine is not on, you cannot speed down');
+//     }
+//   },
+//   engineToggle() {
+//     if (this.isEngineOn) {
+//       this.speed = 0;
+//       return (this.isEngineOn = false);
+//     } else {
+//       return (this.isEngineOn = true);
+//     }
+//   },
+//   lightToggle() {
+//     if (this.isLightOn) {
+//       return (this.isLightOn = false);
+//     } else {
+//       return (this.isLightOn = true);
+//     }
+//   },
+// };
+
+// vehicle.speedOn(100);
+// vehicle.engineToggle();
+// vehicle.speedOn(100);
+// vehicle.engineToggle();
+// vehicle.lightToggle();
+// vehicle.lightToggle();
+// console.log(vehicle);
+// ===============================================================================
+// "Увольте" сотрудника если он неактивен И(!) его зп больше 100
+// const workers = [
+//   { name: 'Alex', salary: 100, isActive: true },
+//   { name: 'Rita', salary: 80, isActive: false },
+//   { name: 'John', salary: 100, isActive: true },
+//   { name: 'Derek', salary: 200, isActive: false },
+// ];
+
+// for (let i = 0; i < workers.length; i++) {
+//   if (!workers[i].isActive && workers[i].salary > 100) {
+//     let name = workers[i].name;
+//     console.log(`${name}, you are fired`);
+//     workers.splice(i, 1);
+//   }
+// }
+
+// console.log(workers);
+// -------------------------------------------------------------------------------------
+// Напишите ф-цию, которая принимает аргументом массив обьектов и строку с названием камня.
+// Ф-ция считает сколько будет стоить то к-во камней, которой записано в объекте
+// Ф-ция принимает массив строк и считает сумму всех камней из массива. С учетом кол-ва и цены.
+// просто вместо 1 камня - мы загружаем массив камней
+
+// const stones = [
+//   { name: 'Изумруд', price: 1300, quantity: 4 },
+//   { name: 'Бриллиант', price: 2700, quantity: 3 },
+//   { name: 'Сапфир', price: 400, quantity: 7 },
+//   { name: 'Щебень', price: 200, quantity: 2 },
+// ];
+
+// const stoneNames = ['Бриллиант', 'Изумруд', 'Щебень', 'Сапфир'];
+
+// const stonePrice = function (arr, arrNames) {
+//   let result = 0;
+//   for (let name of arrNames) {
+//     for (let el of arr) {
+//       if (el.name === name) {
+//         result += el.price * el.quantity;
+//       }
+//     }
+//   }
+//   return result;
+// };
+
+// console.log(stonePrice(stones, stoneNames));
+
+// ------------------------------------------------------------------------------------------
+
+// const userName = str => {
+//   const arr = str.split(' ');
+//   const obj = {};
+//   obj.name = arr[0];
+//   obj.surname = arr[1];
+//   console.log(obj);
+// };
+
+// userName('Iryna Zalata');
+// ------------------------------------------------------------------------------------------------
+
+// const workers = [
+//   'Іванова Катерина',
+//   'Петрова Юлія',
+//   'Клименко Станіслав',
+//   'Шевченко Андрій',
+//   'Богуслав Тарас',
+//   'Варламова Дарина',
+//   'Козлов Максим',
+// ];
+
+// const addId = function (arr) {
+//   const newWorkersList = [];
+//   let obj = {};
+//   for (let el of arr) {
+//     let list = el.split(' ');
+//     obj.surname = list[0];
+//     obj.name = list[1];
+//     newWorkersList.push(obj);
+//     obj = {};
+//   }
+//   for (let i = 0; i < newWorkersList.length; i++) {
+//     newWorkersList[i].id = i + 1;
+//   }
+//   return newWorkersList;
+// };
+
+// console.log(addId(workers));
+// =============================== HOMEWORK 3 ===================================================
 // TASK 1 =======================================================================================
 
 // CRUD для свойств объекта
@@ -400,7 +529,6 @@
 // Используй метод push для добавления значения в массив и оператор in для проверки наличия свойства в объекте.
 
 // function getAllPropValues(array, prop) {
-//   "use strict"
 //   const result = []
 //   for (const el of array) {
 //     for (const key in el) {
@@ -454,18 +582,16 @@
 // }
 
 // --------------------------- 2variant-----------------------
-//   function calculateTotalPrice(array, prop) {
+// function calculateTotalPrice(array, prop) {
 //   'use strict';
-//   let sum = 0;
 //   let total = 0;
 //   for (const el of array) {
 //     if (prop === el.name) {
-//       total = el.price * el.quantity;
-//       sum += total;
+//       total += el.price * el.quantity;
 //     }
 //   }
-//   return sum;
-//   }
+//   return total;
+// }
 // -----------------------------------------------------
 
 // Объекты и ожидаемый результат
@@ -480,7 +606,7 @@
 // ];
 
 // console.table(products);
-// console.log(calculateTotalPrice(products, "Радар"))
+// console.log(calculateTotalPrice(products, 'Радар'));
 // 9080
 // console.log(calculateTotalPrice(products, 'Сканер'));
 // 10200
@@ -498,3 +624,19 @@
 // };
 
 // console.log(isApet(['Mango', 'Poly', 'Ajax']));
+
+// --------------------------------------------------------------------------------------------------
+// Сделайте калькулятор, который будет находить площадь и периметр квадрата
+// const square = a => a * a;
+// const perimeter = a => a * 4;
+
+// console.log(square(5));
+// console.log(perimeter(5));
+// ------------------------------------------------------------------------------------------------
+// Сделайте калькулятор, который будет находить площадь и периметр прямоугольника.
+// const square = (a, b) => a * b;
+// const perimeter = (a, b) => 2 * (a + b);
+
+// console.log(square(5, 7));
+// console.log(perimeter(5, 7));
+// -----------------------------------------------------------------------------------------------------
