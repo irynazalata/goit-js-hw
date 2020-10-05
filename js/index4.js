@@ -41,7 +41,7 @@
 //   for (let i = 0; i < array.length; i += 1) {
 //     const element = array[i];
 //     const index = i;
-//     if (cb(element, index, arr)) {
+//     if (cb(element, index, array)) {
 //       numbers.push(element);
 //     }
 //   }
@@ -375,4 +375,3 @@ account.addOrder(5000, 'order-4');
 // console.log(reduceArray(arr, sub)); // -13
 //console.log(reduceArray(arr, sub, 10)); // -5
 // -----------------------------------------------------------------------------------------
-// Задача 4
