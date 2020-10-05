@@ -41,8 +41,6 @@
 //   for (let i = 0; i < array.length; i += 1) {
 //     const element = array[i];
 //     const index = i;
-//     // Write code under this line
-//     const arr = array;
 //     if (cb(element, index, arr)) {
 //       numbers.push(element);
 //     }
@@ -306,3 +304,75 @@ account.addOrder(5000, 'order-4');
 // };
 // affordableCars(cars, money, priceChecking);
 // --------------------------------------------------------------------------------------------------------
+// Роблю домашку самостійно, сама пишу весь код
+// ---------------------------------------------------------------------------------------------------------
+// Задача 1
+// const mapArray = function (array, cb) {
+//   const numbers = new Array(array.length);
+//   for (let i = 0; i < array.length; i++) {
+//     let element = array[i];
+//     let index = i;
+//     numbers[i] = cb(element, index);
+//   }
+//   return numbers;
+// };
+
+// const addIndex = (element, index) => element + index;
+// const subIndex = (element, index) => element - index;
+
+// const arr = [1, 2, 3, 4, 5];
+
+// console.log(mapArray(arr, addIndex));
+// [1, 3, 5, 7, 9]
+
+//console.log(mapArray(arr, subIndex));
+// [1, 1, 1, 1, 1]
+// ----------------------------------------------------------------------------------------------------------
+// Задача 2
+// const isUniq = (element, index, array) => array.indexOf(element) === index;
+
+// const isEven = element => element % 2 === 0;
+
+// const filterArray = function (array, cb) {
+//   const numbers = [];
+//   for (let i = 0; i < array.length; i++) {
+//     let element = array[i];
+//     let index = i;
+//     if (cb(element, index, array)) {
+//       numbers.push(element);
+//     }
+//   }
+//   return numbers;
+// };
+// const arr = [1, 2, 3, 4, 5, 1, 2, 5];
+// console.log(filterArray(arr, isUniq));
+// [1, 2, 3, 4, 5]
+// console.log(filterArray(arr, isEven));
+// [2, 4, 2]
+// ------------------------------------------------------------------------------------------------------------------
+// Задача 3
+// const add = (accum, element) => accum + element;
+// const sub = (accum, element) => accum - element;
+// const mult = (accum, element) => accum * element;
+
+// const reduceArray = function (array, cb) {
+//   let accum = array[0];
+//   for (let i = 1; i < array.length; i++) {
+//     const element = array[i];
+//     accum = cb(accum, element);
+//   }
+//   return accum;
+// };
+
+// const arr = [1, 2, 3, 4, 5];
+
+// console.log(reduceArray(arr, add)); // 15
+//console.log(reduceArray(arr, add, 10)); // 25
+
+// console.log(reduceArray(arr, mult)); // 120
+//console.log(reduceArray(arr, mult, 10)); // 1200
+
+// console.log(reduceArray(arr, sub)); // -13
+//console.log(reduceArray(arr, sub, 10)); // -5
+// -----------------------------------------------------------------------------------------
+// Задача 4
