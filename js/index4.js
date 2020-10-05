@@ -179,3 +179,130 @@ account.addOrder(5000, 'order-4');
 // console.log(arrayRemove);
 // ['Knife', 'Medkit']
 // ===========================================================================================
+// ================================ Practice =========================================
+
+// const greeting = function (callback, callback2) {
+//   let helloMsg = 'Hello, my name is:';
+//   let countryMsg = "I'm from: ";
+//   callback(helloMsg);
+//   callback2(countryMsg);
+// };
+
+// const askName = function (helloMsg) {
+//   let name = prompt("What's your name?");
+//   console.log(helloMsg + name);
+// };
+
+// const askCountry = function (countryMsg) {
+//   let country = prompt('Where are you from?');
+//   console.log(countryMsg + country);
+// };
+
+// greeting(askName, askCountry);
+// =============================================================================================
+// const calculator = function (num, callback) {
+//   return callback(num);
+// };
+
+// const plus = function (num) {
+//   return Number(prompt('Enter your number: ')) + num;
+// };
+
+// const minus = function (num) {
+//   return prompt('Enter your number: ') - num;
+// };
+
+// let resultPlus = calculator(10, plus);
+// console.log(resultPlus);
+// let resultMinus = calculator(10, minus);
+// console.log(resultMinus);
+// ===============================================================================
+// Напишите функцию которая принимает 3 параметра: название, цена, колбек
+// Колбек создаёт объект с товаром и выводит его в консоль
+
+// const allProducts = [];
+// const fn = function (name, price, callback) {
+//   callback(name, price);
+// };
+
+// const orderFormatting = function (name, price) {
+//   let product = { name, price };
+//   allProducts.push(product);
+//   return allProducts;
+// };
+
+// fn('Bread', 10, orderFormatting);
+// fn('Butter', 25, orderFormatting);
+// fn('Milk', 20, orderFormatting);
+// fn('Sugar', 30, orderFormatting);
+// console.log(allProducts);
+// ============================================================================
+
+// const greeting = function (callback) {
+//   const message = 'Welcome to our place, ';
+//   callback(message);
+// };
+// const askName = function (message) {
+//   const name = prompt('Enter your name, please');
+//   console.log(message + name);
+// };
+
+// greeting(askName);
+// ==============================================================================
+// let money = 85;
+// const favouriteColor = 'green';
+// Если стоимость машины меньше money вывести массив машин которые вы можете приобрести
+// let cars = [
+//   { name: 'ferrari', cost: 100, color: 'red' },
+//   { name: 'lambo', cost: 90, color: 'green' },
+//   { name: 'bmw', cost: 80, color: 'blue' },
+//   { name: 'subaru', cost: 60, color: 'yellow' },
+// ];
+
+// const affordableCars = [];
+// for (let car of cars) {
+//   if (money >= car['cost']) {
+//     affordableCars.push(car);
+//   }
+// }
+
+// console.log(affordableCars);
+
+// affordableCars(cars, affordableCar);
+
+// const affordableCar = function (callback) {
+//   callback(array);
+// };
+
+// const filter = function (array, test) {
+//   const filteredArray = [];
+
+//   for (const el of array) {
+//     const passed = test(el);
+
+//     if (passed) {
+//       filteredArray.push(el);
+//     }
+//   }
+
+//   return filteredArray;
+// };
+
+// const affordableCars = filter(cars, car => money >= car.cost);
+// console.log(affordableCars);
+// ---------------------------------------------- variant2 ----------------------------------------------
+// const affordableCars = function (array, value, callback) {
+//   callback(array, value);
+// };
+
+// const priceChecking = function (array, value) {
+//   const filteredArray = [];
+//   for (const el of array) {
+//     if (value >= el['cost']) {
+//       filteredArray.push(el);
+//     }
+//   }
+//   console.log(filteredArray);
+// };
+// affordableCars(cars, money, priceChecking);
+// --------------------------------------------------------------------------------------------------------
