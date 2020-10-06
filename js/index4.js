@@ -303,7 +303,164 @@ account.addOrder(5000, 'order-4');
 //   console.log(filteredArray);
 // };
 // affordableCars(cars, money, priceChecking);
+// --------------------------------------------------------------------------------------------
+// const fn = function () {
+//   let name = 1;
+//   let surname = 2;
+//   const otherFunction = function () {
+//     console.log(name, surname);
+//   };
+//   otherFunction();
+// };
+
+// fn();
+// -----------------------------------------------------------------------------------------
+
+// const otherFunction = function () {
+//   const name = 1;
+//   const surname = 2;
+//   console.log(name, surname);
+// };
+
+// const fn = function () {
+//   otherFunction();
+// };
+
+// fn();
+// -------------------------------------------------------------------------------------------------
+
+// ------------------------------------------------------------------------------------------
+// const counter = function(n) {
+// let state = n;
+// const onDecrement = function(n) {
+//     state-=n;
+//     console.log(state);
+// }
+// const onIncrement = function(n) {
+//     state+=n;
+//     console.log(state);
+// }
+// return {onDecrement, onIncrement}
+// }
+// counter() === {
+//     onDecrement: <fn>,
+//     onIncrement: <fn>
+//     }
+// counter().onIncrement();
+// counter().onIncrement();
+// counter().onIncrement();
+// let counterA = counter(10);
+// counterA.onIncrement(2);
+// counterA.onIncrement(10);
+// counterA.onIncrement(500);
+// counterA.onDecrement(500);
+// let counterB = counter();
+// counterB.onDecrement();
+// counterB.onDecrement();
+// counterB.onDecrement();
+// counterB.onDecrement();
+// console.log(counter());
+// --------------------------------------------------------------------------------------------------
+//   const shopMechanism = function() {
+// let state = [];
+// const addItem = function(name, price, color) {
+// state.push({name, price, color});
+// }
+// const discount = function() {
+// for(let el of state) {
+//     el.price*=0.9;
+// }
+// }
+// const showCart = function() {
+// console.log(state);
+// }
+// const clearCart = function() {
+// state =[];
+// }
+// return {addItem, discount, showCart, clearCart}
+// }
+// let customerA = shopMechanism();
+// customerA.addItem('Guitar', 100, 'black');
+// customerA.addItem('T-shirt', 30, 'black');
+// customerA.addItem('Car', 1000, 'black');
+// customerA.discount();
+// customerA.clearCart();
+// customerA.showCart();
 // --------------------------------------------------------------------------------------------------------
+// Напишите функцию sum, которая работает таким образом: sum(a)(b) = a+b.
+// Да, именно таким образом, используя двойные круглые скобки (не опечатка).
+// Например:
+// sum(1)(2) = 3
+// sum(5)(-1) = 4
+
+// const sum = function (number1) {
+//   return function (number2) {
+//     console.log(number1 + number2);
+//   };
+// };
+
+// sum(5)(-1);
+// -----------------------------------------------------------------------------------------
+// let carsForExport = [];
+
+// const createCar = function () {
+//   let state = [];
+//   const addItem = function (name, price, color) {
+//     state.push({ name, price, color });
+//     if (state.length === 5) {
+//       sendCarsForExport();
+//       state = [];
+//     }
+//   };
+
+//   const chooseColor = function (name, color) {
+//     let newColor = color;
+//     for (let el of state) {
+//       if (el.name === name) {
+//         el.color = newColor;
+//       } else
+//         console.log(
+//           'This car has not been created yet or was already sent for export. You cannot change the color',
+//         );
+//     }
+//   };
+//   const discount = function (percent) {
+//     for (let el of state) {
+//       el.price *= 1 - percent / 100;
+//     }
+//   };
+//   const showCart = function () {
+//     console.log(state);
+//   };
+//   const sendCarsForExport = function () {
+//     if (state.length === 5) {
+//       carsForExport = [...carsForExport, ...state.splice(0)];
+//     }
+//   };
+//   return { addItem, chooseColor, discount, showCart, sendCarsForExport };
+// };
+// let newCar = createCar();
+// newCar.addItem('peugeot', 1500, 'red');
+// newCar.addItem('renault', 2500, 'red');
+// newCar.addItem('bmw', 1800, 'red');
+// newCar.discount(10);
+// newCar.chooseColor('skoda', 'black');
+// newCar.addItem('skoda', 1900, 'red');
+// newCar.addItem('ford', 1200, 'red');
+// newCar.addItem('audi', 2200, 'red');
+// newCar.addItem('skoda', 1900, 'red');
+// newCar.addItem('ford', 1200, 'red');
+// newCar.addItem('audi', 2200, 'red');
+// newCar.addItem('skoda', 1900, 'red');
+// newCar.addItem('ford', 1200, 'red');
+// newCar.addItem('audi', 2200, 'red');
+// newCar.discount(10);
+// newCar.showCart();
+// newCar.sendCarsForExport();
+// newCar.showCart();
+// console.log(carsForExport);
+
+// ------------------------------------------------------------------------------------------------------------
 // Роблю домашку самостійно, сама пишу весь код
 // ---------------------------------------------------------------------------------------------------------
 // Задача 1
