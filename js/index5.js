@@ -707,3 +707,224 @@
 // alert(powerCalc.calculate('5 ** 3'));
 
 // ----------------------------------------------------------
+// Создайте массив arr = ['a', 'b', 'c', 'd'] и с его помощью выведите на экран строку 'a+b, c+d'.
+
+// const arr = ['a', 'b', 'c', 'd'];
+// console.log(`${arr[0]} + ${arr[1]}, ${arr[2]} + ${arr[3]}`);
+// -----------------------------------------------------------
+// class Animal {
+// constructor(arr){
+// this.name = arr[0];
+// this.nick = arr[1];
+// this.breed = arr[2];
+// this.sayMyow = function(randomVoice) {
+//   console.log(`${this.nick} says ${randomVoice}...  `)
+// }
+// }
+// }
+// let voices = ['Myow', 'bark', 'gav', 'bleat']
+// let randomVoice = voices[Math.round(Math.random()*(voices.length-1))]
+// let cat = new Animal(['cat', 'Piton', 'britan'])
+// cat.sayMyow(randomVoice);
+// ---------------------------------------------------------------------
+// class Animal {
+// constructor(obj){
+// this.type = obj.type;
+// this.q = obj.q;
+// this.size = obj.size;
+// }
+// sayMyow() {
+//   console.log(`${this.nick} says ${voices[Math.round(Math.random()*(voices.length-1))]}...  `)
+// }
+// set setColor(color) {
+//  this.color = color;
+// }
+// set setWeight(weight) {
+// this.weight = weight;
+// }
+// get allProp() {
+//   console.log(this.weight);
+// }
+// static sayHello() {
+//   alert('Hello')
+// }
+// }
+// let animalProperties = {
+//   type: "Animal",
+//   q: 'q',
+//   size: 'small'
+// }
+// let CatsPropetries = {
+//   type: 'african',
+//   paws: true,
+//   whiskers: true
+// }
+// class Cats extends Animal {
+// constructor(type, obj, name) {
+// super(type);
+// this.name = name;
+// this.type = obj.type;
+// this.paws = obj.paws;
+// this.whiskers = obj.whiskers;
+// }
+// }
+// const puma = new Cats({...animalProperties}, {...CatsPropetries}, 'Bagira');
+// const tiger = new Cats({...animalProperties}, {...CatsPropetries}, 'Sherhan');
+// puma.setWeight = 100;
+// console.log(tiger);
+// console.log(puma);
+// Animal.sayHello();
+// -----------------------------------------------------------------
+// Реализуйте класс Worker (Работник), который будет иметь следующие свойства: name (имя), surname (фамилия), rate (ставка за день работы), days (количество отработанных дней). Также класс должен иметь метод getSalary(), который будет выводить зарплату работника. Зарплата - это произведение (умножение) ставки rate на количество отработанных дней days.
+// Вот так должен работать наш класс:
+
+// Модифицируйте класс Worker из предыдущей задачи следующим образом: сделайте все его свойства приватными, а для их чтения сделайте методы-геттеры. Наш класс теперь будет работать так:
+// var worker = new Worker('Иван', 'Иванов', 10, 31);
+// console.log(worker.getName); //выведет 'Иван'
+// console.log(worker.getSurname); //выведет 'Иванов'
+// console.log(worker.getRate); //выведет 10
+// console.log(worker.getDays); //выведет 31
+// console.log(worker.getSalary); //выведет 310 - то есть 10*31
+
+// class Worker {
+//   constructor(name, surname, rate, days) {
+//     this.name = name;
+//     this.surname = surname;
+//     this.rate = rate;
+//     this.days = days;
+//   }
+//   salary() {
+//     return this.rate * this.days;
+//   }
+
+//   get getName() {
+//     console.log(this.name);
+//   }
+
+//   get getSurname() {
+//     console.log(this.surname);
+//   }
+
+//   get getRate() {
+//     console.log(this.rate);
+//   }
+
+//   get getDays() {
+//     console.log(this.days);
+//   }
+  
+//   get getSalary() {
+//     console.log(this.rate * this.days);
+//   }
+
+//   set setRate(value) {
+//     this.rate = value;
+//   }
+
+//   set setDays(value) {
+//     this.days = value
+//   }
+// }
+
+// var worker = new Worker('Иван', 'Иванов', 10, 31);
+// worker.getRate; //выведет 10
+// worker.getDays; //выведет 31
+// worker.getSalary; //выведет 310 - то есть 10*31
+// worker.setRate = 20; //увеличим ставку
+// worker.setDays = 10; //уменьшим дни
+// worker.getSalary; //выведет 200 - то есть 20*10
+// console.log(worker.Salary());
+// -----------------------------------------------------------------------------
+// Реализуйте класс MyString, который будет иметь следующие методы: метод reverse(), который параметром принимает строку, а возвращает ее в перевернутом виде, метод ucFirst(), который параметром принимает строку, а возвращает эту же строку, сделав ее первую букву заглавной и метод ucWords, который принимает строку и делает заглавной первую букву каждого слова этой строки.
+// Наш класс должен работать так:
+// var str = new MyString();
+// console.log(str.reverse('abcde')); //выведет 'edcba'
+// console.log(str.ucFirst('abcde')); //выведет 'Abcde'
+// console.log(str.ucWords('abcde abcde abcde')); //выведет 'Abcde Abcde Abcde'
+
+// class MyString {
+//   reverse(str) {
+//     return str.split('').reverse().join('');
+//   }
+//   ucFirst(str) {
+//     return str[0].toUpperCase() + str.slice(1);
+//   }
+
+//   ucWords(str) {
+//     str = str.split(' ');
+//     let newStr = [];
+//     for (let el of str) {
+//       el = el[0].toUpperCase() + el.slice(1);
+//       newStr.push(el);
+//     }
+//     return newStr.join(' ')
+//   }
+// };
+
+// var string = new MyString();
+  
+// console.log(string.reverse('abcde')); //выведет 'edcba'
+// console.log(string.ucFirst('abcde')); //выведет 'Abcde'
+// console.log(string.ucWords('abcde abcde abcde')); //выведет 'Abcde Abcde Abcde'
+// --------------------------------------------------------------------------------------
+// Реализуйте класс Validator, который будет проверять строки. К примеру, у него будет метод isEmail параметром принимает строку и проверяет, является ли она корректным емейлом или нет. Если является - возвращает true, если не является - то false. Кроме того, класс будет иметь следующие методы: метод isDomain для проверки домена, метод isDate для проверки даты и метод isPhone для проверки телефона:
+// var validator = new Validator();
+// console.log(validator.isEmail('phphtml@mail.ru'));
+// console.log(validator.isDomain('phphtml.net'));
+// console.log(validator.isDate('12.05.2020'));
+// console.log(validator.isPhone('+375 (29) 817-68-92')); //тут можете формат своей страны
+
+// class Validator {
+//   isEmail(str) {
+//     this.str = str.split('.');
+//     if (this.str[0].includes('@')) {
+//       this.str = this.str[0].split('@')
+//       return this.str[0].length > 1 ? 'true' : 'false';
+//     } else {
+//       return 'false'
+//     } 
+//   }
+//   isDomain(str) {
+//     this.str = str.split('.');
+//     if (this.str[0].length > 0) {
+//       return this.str.includes('com') || this.str.includes('net') ? 'true' : 'false';
+//     } else {
+//       return 'false'
+//     }
+//   }
+//   isDate(str) {
+//     this.str = str.split('.')
+//     if (this.str[0].length === 2 && this.str[1].length === 2 && this.str[2].length === 4) {
+//       for (let el of this.str) {
+//         let num = String(parseInt(el))
+//         if (el[0] === '0') {
+//           if (el.length !== num.length + 1) {
+//             return 'false'
+//           } else {
+//             continue
+//           }
+//         } else {
+//           if (el.length !== num.length) {
+//             return 'false'
+//           } else {
+//             continue
+//           }
+//         }
+//       }
+//       return 'true'
+//     } else {
+//       return 'false'
+//     }
+//   }
+//   isPhone(str) {
+//     this.str = str.split(' ').join('').split('(').join('').split(')').join('').split('-').join('').split('+').join('');
+//     this.str = String(parseInt(this.str));
+//     return this.str.length === 12 ? 'true' : 'false';
+//   };
+// }
+
+// var validator = new Validator();
+// console.log(validator.isEmail('phphtml@mail.ru'));
+// console.log(validator.isDomain('phphtml.net'));
+// console.log(validator.isDate('1t.05.2020'));
+// console.log(validator.isPhone('+375 (29) 817-68-92'));
