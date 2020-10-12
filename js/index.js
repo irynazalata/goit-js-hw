@@ -191,3 +191,13 @@
 // charCodeAt()      = юнікод в букви
 // console.log(cipher("SERR CVMMN"))  // FREE PIZZA;
 // console.log(cipher("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT"))  // THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG;
+// const users = [
+//   { name: 'Mango', isActive: true },
+//   { name: 'Poly', isActive: false },
+//   { name: 'Ajax', isActive: true },
+// ];
+
+// // Для каждого элемента коллекции (user) вернем значение поля name
+// const names = users.map(user => console.log(typeof user.isActive));
+
+// console.log(names); // ["Mango", "Poly", "Ajax"]
