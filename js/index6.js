@@ -27,10 +27,10 @@
 //     { name: 'Poly', isActive: false },
 //     { name: 'Ajax', isActive: true },
 //   ];
-  
+
 //   // Для каждого элемента коллекции (user) вернем значение поля name
 //   const names = users.map(user => user.isActive);
-  
+
 //   console.log(names); // ["Mango", "Poly", "Ajax"]
 // const brownEyed2 = users.map(el=> el.eyeColor !== 'brown' ? el = {...el, eyeColor: 'brown'} : el);
 // const brownEyed2 = users.map(el=> el = {...el, eyeColor: 'brown'});
@@ -47,7 +47,7 @@
 // console.log(age);
 // EVERY
 // const e = users.every((el, i)=> {
-    
+
 //     console.log(i);
 //   return  el.age>0;
 // });
@@ -124,9 +124,7 @@
 // userYears()
 // ------------------------------------------------------------
 // -------------task III ------------------------
-// const showYear = function (year) {
-//   return year % 4 === 0;
-// }
+// const showYear = year => year % 4 === 0
 // console.log(showYear(1996))
 // console.log(showYear(1993))
 // ---------------------------------------------------------------
@@ -657,8 +655,8 @@
 //  age: 39
 //  }
 // ]
- 
- 
+
+
 // const getSortedUniqueSkills = (array) => array.reduce((allSkills, { skills }) => {allSkills = [ ...allSkills, ...skills ]; return allSkills;}, []).filter((el, idx, arr) => arr.indexOf(el) === idx).sort();
 // console.log(getSortedUniqueSkills(users));
 // --------------------------------------------------------------------------------------------------

@@ -32,9 +32,19 @@
 // -----------------------------------------------------------------------------------------------------
 // 1) Написати ф - ю яка знаходить в масиві число яке найблище знаходиться до нуля і повертає його.Якщо таких чисел 2(тобто 1 і - 1) тоді повертати додатнє
 // ​
-// console.log(closestToZero([-5, -3, 1, 2, 3, 5])) // 1
-// console.log(closestToZero([-2, 3, 5, 10])) // -2
-// console.log(closestToZero([-7, -5, -3, 3, 5, 8])) //3
+// const closestToZero = function (arr) {
+
+//   const obj = {}
+//   for (let el of arr) {
+//     const newEl = Math.abs(el);
+//     obj[el] = 0 + newEl;
+//   }
+//   let keysSorted = Object.keys(obj).sort((a,b)=> obj[a]-obj[b])
+//   return keysSorted[0]
+// }
+//  console.log(closestToZero([-5, -3, 1, 2, 3, 5])) // 1
+//  console.log(closestToZero([-2, 3, 5, 10])) // -2
+//  console.log(closestToZero([-7, -5, -3, 3, 5, 8])) //3
 
 // 2) Написати гру Камінь Ножиці Папір.
 // Варіанти вибору потрібно зберігати в масиві
@@ -45,16 +55,77 @@
 // 1) Варіанти де виграє користувач
 // 2) Варіанти де виграє компютер
 // 3) Варіанти де виходить нічия.
+
+// let computerChoice
+// let i
+// let playerChoice;
+// let result;
+
+// do {
+//   playerChoice = prompt("Зробіть свій вибір. Напишіть камінь, ножиці чи папір")
+//   computerChoice = ['камінь', 'ножиці', 'папір'];
+//   i = Math.floor(Math.random() * computerChoice.length);
+
+
+//   if (playerChoice === null || playerChoice === '' || !(computerChoice.includes(playerChoice))) {
+//     alert("Введіть коректний варіант");
+//   } else {
+//     if ((computerChoice[i] === 'ножиці' && playerChoice === 'папір') || (computerChoice[i] === 'папір' && playerChoice === 'камінь') || (computerChoice[i] === 'камінь' && playerChoice === 'ножиці')) {
+//       result = 'На жаль, Ви програли. Спробуйте ще раз';
+//       alert(result)
+//     } else if ((computerChoice[i] === 'ножиці' && playerChoice === 'камінь') || (computerChoice[i] === 'папір' && playerChoice === 'ножиці') || (computerChoice[i] === 'камінь' && playerChoice === 'папір')) {
+//       result = "Вітаємо, Ви виграли у комп'ютера";
+//       alert(result)
+//     } else if ((computerChoice[i] === 'ножиці' && playerChoice === 'ножиці') || (computerChoice[i] === 'папір' && playerChoice === 'папір') || (computerChoice[i] === 'камінь' && playerChoice === 'камінь')) {
+//       result = "Нічия. Спробуйте ще раз";
+//       alert(result)
+//     }
+//   }
+// } while (result != "Вітаємо, Ви виграли у комп'ютера")
+
+// console.log(computerChoice[i]);
+
 // 2.5)
 //  1) Питаємся в користувача яка в нього є валюта
 // 2) Питаємся в яку він хоче перевести
 // 3) Питаємся яку суму хоче поміняти 
 // 4) Вивести на екран суму яка вийшла. 
+
 // usd eur uah
 // const USD_UAH = 28.3;
 // const UAH_USD = 1 / USD_UAH;
 // const EUR_UAH = 30;
 // const UAH_EUR = 1 / EUR_UAH;
+
+// const currency = ['USD', 'UAH', "EUR"]
+
+// const customerCurrency = prompt('Яку валюту Ви хочете обміняти?');
+
+// const wantedCurrency = prompt('Яку валюту Ви хочете отримати?');
+
+// const customerCurrencyAmount = prompt('Яку суму Ви хочете обміняти?');
+
+// let result
+
+// if ((customerCurrency === null || !(currency.includes(customerCurrency)))
+//   && (customerCurrency === null || !(currency.includes(wantedCurrency)))) {
+//   alert('Введіть коректну валюту: USD, EUR, UAH')
+// } else {
+//   if (customerCurrency === 'USD' && wantedCurrency === 'UAH') {
+//     result = (Number(customerCurrencyAmount) * USD_UAH) ;
+//   } else if (customerCurrency === 'EUR' && wantedCurrency === 'UAH') {
+//     const result = Number(customerCurrencyAmount) * EUR_UAH;
+//   } else if (customerCurrency === 'UAH' && wantedCurrency === 'USD') {
+//     result = Number(customerCurrencyAmount) * UAH_USD;
+//   } else if (customerCurrency === 'UAH' && wantedCurrency === 'EUR') {
+//     result = Number(customerCurrencyAmount) * UAH_EUR;
+//   } else {
+//     result = 0
+//   }
+//   result === 0 ? alert("Ми не здійснюємо таку валютну операцію") : alert(`За ${customerCurrencyAmount} ${customerCurrency} Ви отримаєте ${Math.round(result)} ${wantedCurrency}`)
+// }
+
+
 
 //3) 1) спитатися в користувача скільки товарі він хоче купити в магазині
 // 2) На основаі пункта 1 стільки разів має спрацювати цикл
@@ -82,8 +153,15 @@
 
 
 // 6) Написати ф-ю convertToPrc(container, block) яка приймає розміри контейнера та розміри блока в форматі строк і повертає значення блока в %. Якщо результат дробовий округлювати до двох знаків після коми.
-// console.log('1000px', '100px'); //10%
-// console.log('950px', '150px'); // 15.79%
+// const convertToPrc = function (container, block) {
+//   let first = parseInt(container);
+//   let second = parseInt(block);
+//   let result = Math.round((second / first * 100) * 100) / 100;
+//   return `${result}%`
+// }
+
+//  console.log(convertToPrc('1000px', '100px')); //10%
+//  console.log(convertToPrc('950px', '150px')); // 15.79%
 
 
 // 7) Написати ф-ю pxConvertor(from, to, block, container)  яка приймає параметри:
