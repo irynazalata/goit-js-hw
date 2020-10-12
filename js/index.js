@@ -103,7 +103,8 @@
 // console.log(convertFromKm(3)); // {cm: 300000, dm: 30000, m: 3000,}
 
 
-// 9) let worker = {
+// 9)
+// let worker = {
 //     workSchedule: [
 //         {day: 'M', hours: 9},
 //         {day: 'T', hours: 10},
@@ -125,6 +126,12 @@
 // hours - години роботи
 // value - сума штрафу
 // premium - премія
+
+// const getSalary = function (obj, rate) {
+//   const weekSalary = obj['workSchedule'].reduce((acc, { hours }) => acc + hours, 0) * rate;
+//   const weekPenalty = obj['penalty'].reduce((acc, { value }) => acc + value, 0);
+//   return weekSalary - weekPenalty + obj['premium']
+// }
 // console.log(getSalary(worker, 20)); // 1235
 // console.log(getSalary(worker, 8)); // 671
 

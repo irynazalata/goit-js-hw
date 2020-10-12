@@ -17,6 +17,212 @@
 // console.log(getUserById(users, '001'));
 // console.log(getUserById(users, '003'));
 // --------------------------------------------------------------------------
+// FOREACH
+// arr.forEach((el)=> console.log(el))
+// console.log(arr);
+// MAP
+// console.log(arr.map((el, i, array)=> el))
+// const users = [
+//     { name: 'Mango', isActive: true },
+//     { name: 'Poly', isActive: false },
+//     { name: 'Ajax', isActive: true },
+//   ];
+  
+//   // Для каждого элемента коллекции (user) вернем значение поля name
+//   const names = users.map(user => user.isActive);
+  
+//   console.log(names); // ["Mango", "Poly", "Ajax"]
+// const brownEyed2 = users.map(el=> el.eyeColor !== 'brown' ? el = {...el, eyeColor: 'brown'} : el);
+// const brownEyed2 = users.map(el=> el = {...el, eyeColor: 'brown'});
+// const brownEyed2 = users.map(el=> {
+//     el.eyeColor = 'brown';
+//     return el;
+// });
+// console.log(brownEyed2);
+// FILTER
+// const brownEyed =  users.filter(el=> el.age === 24);
+// console.log(brownEyed);
+// FIND
+// const age = users.find(el=> el.id === "88beb2f3-e4c2-49f3-a0a0-ecf957a95af3ddd");
+// console.log(age);
+// EVERY
+// const e = users.every((el, i)=> {
+    
+//     console.log(i);
+//   return  el.age>0;
+// });
+// console.log(e);
+// SOME
+// const s = users.some((el, i, arr)=> {
+//   el.skills.includes('anim') ? console.log(arr[i]) : '';
+//   return el.skills.includes('anim');
+// });
+// console.log(s);
+// REDUCE
+// const balance = users.reduce((acc, el)=> { 
+//   return  acc += el.balance;
+// }, 0)
+// console.log(balance);
+// const friends = users.reduce((acc, el)=>{
+//     let result = [];
+// acc.push(...el.friends);
+//    for(let elem of acc) {
+//        !result.includes(elem) ? result.push(elem) : '';
+//    }
+// return result.filter(el=> el === 'Briana Decker');
+// }, []);
+// console.log(friends);
+// const friends2 = users.reduce((acc, el)=>{
+// acc.push(...el.friends);
+//     return acc;
+// }, []);
+// console.log(friends2);
+// ============================================ PRACTICE ================================================
+// TASKS
+// I)
+// 1) Написати ф-ю яка приймає рік
+// 2) Повертає століття.
+// II)
+// 1) Запитуємо в користувача роки до тих пір поки він не натисне Cancel
+// 2) Всі роки які вводить користувач записується в масив years
+//  3) Коли зупинився цикл потрібно перебрати масив years
+// і вивести в консоль запис 
+// 1952 рік - 20 століття
+// 1440 рік - 15 століття
+// III)
+// 1) Написати ф-ю showYear що приймає рік і перевіряє чи він є високосний
+// 2) Функція повертає true якщо рік високосний і false якщо ні
+// ----------------------task I ----------------------------
+// const century = function (year) {
+//   const arr = String(year).split('');
+//   return Number(arr[0] + arr[1]) + 1
+// }
+
+// console.log(century(1701))
+// -----------------------------------------------
+// const century = function (year) {
+//   const cent = year * 0.01
+//   return Math.ceil(cent)
+// }
+
+// console.log(century(1987))
+// ------------------------------------------------
+// ----------------------task II ----------------------------
+// const userYears = function () {
+//   const arr = [];
+//   let year;
+//   do {
+//     year = prompt('Enter the year')
+//     if (year !== null) {
+//       arr.push(year)
+//     }
+//   } while (year != null)
+//   for (let el of arr) {
+//       console.log(`${el} рік - ${century(el)} століття`)
+//   }
+// }
+// userYears()
+// ------------------------------------------------------------
+// -------------task III ------------------------
+// const showYear = function (year) {
+//   return year % 4 === 0;
+// }
+// console.log(showYear(1996))
+// console.log(showYear(1993))
+// ---------------------------------------------------------------
+
+// const inventors = [{
+//     first: 'Albert',
+//     last: 'Einstein',
+//     year: 1879,
+//     passed: 1955
+//   },
+//   {
+//     first: 'Isaac',
+//     last: 'Newton',
+//     year: 1643,
+//     passed: 1727
+//   },
+//   {
+//     first: 'Galileo',
+//     last: 'Galilei',
+//     year: 1564,
+//     passed: 1642
+//   },
+//   {
+//     first: 'Marie',
+//     last: 'Curie',
+//     year: 1867,
+//     passed: 1934
+//   },
+//   {
+//     first: 'Johannes',
+//     last: 'Kepler',
+//     year: 1571,
+//     passed: 1630
+//   },
+//   {
+//     first: 'Nicolaus',
+//     last: 'Copernicus',
+//     year: 1473,
+//     passed: 1543
+//   },
+//   {
+//     first: 'Max',
+//     last: 'Planck',
+//     year: 1858,
+//     passed: 1947
+//   },
+//   {
+//     first: 'Katherine',
+//     last: 'Blodgett',
+//     year: 1898,
+//     passed: 1979
+//   },
+//   {
+//     first: 'Ada',
+//     last: 'Lovelace',
+//     year: 1815,
+//     passed: 1852
+//   },
+//   {
+//     first: 'Sarah E.',
+//     last: 'Goode',
+//     year: 1855,
+//     passed: 1905
+//   },
+//   {
+//     first: 'Lise',
+//     last: 'Meitner',
+//     year: 1878,
+//     passed: 1968
+//   },
+//   {
+//     first: 'Hanna',
+//     last: 'Hammarström',
+//     year: 1829,
+//     passed: 1909
+//   }
+// ];
+
+// console.log(inventors.map(el => el.first))
+// console.log(inventors.filter(el => el.year >= 1800))
+// console.log(inventors.filter(el => (el.passed - el.year) >= 50))
+// console.log(inventors.filter(el => el.last === 'Curie').map(el => el = { ...el, married: 'Pierre Curie' }))
+// // console.log(inventors.filter(el => el.first.includes('e') ? el.last : ''))
+// console.log(inventors.filter(el => el.first.includes('e')))
+// console.log(inventors.sort((a,b) => a.first > b.first ? 1 : -1))
+// console.log(inventors.reduce((acc, el) => acc + (el.passed - el.year), 0))
+
+
+// - Вывести массив имён учёных/изобретателей
+// - Вывести массив тех кто родился в 19-ом веке
+// - Вывести массив тех, кто прожил больше 50-ти лет
+// - Найти того, кто работал с радиацией и добавить ей свойство "замужем", в значение запистаь имя мужа
+// - Вывести фамилии тех, в чьём имени есть буква "е"
+// - Получить массив объектов отсортированный по имени (по алфавиту).
+// - Найти сумму лет жизни всех учёных
+// ======================================================================================================
 // ====================================== HOMEWORK ==============================================
 // TASK 1 ---------------------------------------------------------------------------------------
 // map
