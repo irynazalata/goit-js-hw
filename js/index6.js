@@ -207,7 +207,7 @@
 // console.log(inventors.filter(el => el.year >= 1800))
 // console.log(inventors.filter(el => (el.passed - el.year) >= 50))
 // console.log(inventors.filter(el => el.last === 'Curie').map(el => el = { ...el, married: 'Pierre Curie' }))
-// // console.log(inventors.filter(el => el.first.includes('e') ? el.last : ''))
+// console.log(inventors.filter(el => el.first.includes('e') ? el.last : ''))
 // console.log(inventors.filter(el => el.first.includes('e')))
 // console.log(inventors.sort((a,b) => a.first > b.first ? 1 : -1))
 // console.log(inventors.reduce((acc, el) => acc + (el.passed - el.year), 0))
@@ -221,6 +221,49 @@
 // - Получить массив объектов отсортированный по имени (по алфавиту).
 // - Найти сумму лет жизни всех учёных
 // ======================================================================================================
+// Напишите ф-ю которая принимает строку и возвращает объект с  количеством  букв в строке
+
+
+// const getSymbStats = (acc, symb) => {
+//   if (!acc[symb]) {
+//     acc[symb] = 0;
+//   }
+
+//   acc[symb] += 1;
+
+//   return acc
+// };
+
+
+// const countLetter = str => str.split('').reduce(getSymbStats, {})
+
+// console.log(countLetter('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'))
+// -------------------------------------------------------------------------------------------------
+// Дан непустой массив целых чисел (X). В этой задаче вам нужно вернуть массив, состоящий только из неуникальных элементов данного массива. Для этого необходимо удалить все уникальные элементы (которые присутствуют в данном массиве только один раз). Для решения этой задачи не меняйте оригинальный порядок элементов. Пример: [1, 2, 3, 1, 3], где 1 и 3 неуникальные элементы и результат будет [1, 3, 1, 3].
+
+// const nonUniqueElements = function (arr) {
+//   return arr.filter((el, idx, arr) => (arr.lastIndexOf(el) !== idx) || (arr.indexOf(el) !== idx))
+// }
+// -----------------------------------------------------
+
+// const nonUniqueElements = function (array) {
+//   let res = array.filter(el => {
+//     let tmp = array.slice();
+//     let a = tmp.splice(tmp.indexOf(el), 1);
+//     return tmp.includes(a[0]);
+//   });
+//   return res;
+// };
+
+// console.log(nonUniqueElements([1, 2, 3, 1, 3])) // [1, 3, 1, 3]
+// console.log(nonUniqueElements([1, 2, 3, 4, 5])) // []
+// console.log(nonUniqueElements([5, 5, 5, 5, 5])) // [5, 5, 5, 5, 5]
+// console.log(nonUniqueElements([10, 9, 10, 10, 9, 8])) // [10, 9, 10, 10, 9]
+
+
+
+
+
 // ====================================== HOMEWORK ==============================================
 // TASK 1 ---------------------------------------------------------------------------------------
 // map
@@ -333,6 +376,9 @@
 //  age: 39
 //  }
 // ]
+
+// const usersBalance = users.map(el => el = { ...el, balance: 0 })
+// console.log(usersBalance)
 
 // const getUserNames = array => array.map(({ name }) => name);
 
@@ -660,3 +706,4 @@
 // const getSortedUniqueSkills = (array) => array.reduce((allSkills, { skills }) => {allSkills = [ ...allSkills, ...skills ]; return allSkills;}, []).filter((el, idx, arr) => arr.indexOf(el) === idx).sort();
 // console.log(getSortedUniqueSkills(users));
 // --------------------------------------------------------------------------------------------------
+

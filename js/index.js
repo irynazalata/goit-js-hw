@@ -133,6 +133,14 @@
 // 4) Ці назви зберігати в масиві
 // 5) Вивести масив з покупками по закінченю цикла в консоль.
 
+// const amount = prompt("Скільки товарів ви плануєте придбати?")
+// const cart = []
+
+// for (let i = 1; i <= amount; i++) {
+//   const product = prompt("Введіть назву товару");
+//   cart.push(product)
+// }
+// console.log(cart)
 
 
 //4) Написати калькулятор за допомогою ф-ї конструктора. Ця ф-я створює обєкт з  методами read(), sum(), mul(), addMethod(name, function);
@@ -147,10 +155,16 @@
 
 
 // 5) Написати ф-ю convertToRem(px) яка приймає строку і повертає значення в rem
-// console.log('16px'); // 1rem
-// console.log('24px'); // 1.5rem
-// console.log('0px'); // 0rem
 
+
+// const convertToRem = function (px) {
+//   px = parseInt(px);
+//   return `${px / 16}rem`
+// }
+
+// console.log(convertToRem('16px')); // 1rem
+// console.log(convertToRem('24px')); // 1.5rem
+// console.log(convertToRem('0px')); // 0rem
 
 // 6) Написати ф-ю convertToPrc(container, block) яка приймає розміри контейнера та розміри блока в форматі строк і повертає значення блока в %. Якщо результат дробовий округлювати до двох знаків після коми.
 // const convertToPrc = function (container, block) {
@@ -206,8 +220,10 @@
 // premium - премія
 
 // const getSalary = function (obj, rate) {
-//   const weekSalary = obj['workSchedule'].reduce((acc, { hours }) => acc + hours, 0) * rate;
-//   const weekPenalty = obj['penalty'].reduce((acc, { value }) => acc + value, 0);
+//   const workSchedule = obj['workSchedule'];
+//   const penalty = obj['penalty'];
+//   const weekSalary = workSchedule.reduce((acc, { hours }) => acc + hours, 0) * rate;
+//   const weekPenalty = penalty.reduce((acc, { value }) => acc + value, 0);
 //   return weekSalary - weekPenalty + obj['premium']
 // }
 // console.log(getSalary(worker, 20)); // 1235
