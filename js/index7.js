@@ -45,4 +45,39 @@
 //   listItemRef.textContent = el
 //   listRef.appendChild(listItemRef)
 // }
+// ----------------------------------------------------------
+// PRACTICE -------------------------------------------
 
+// const list = document.querySelector('ul')
+
+// for (let i = 1; i <= 3; i++) {
+//   const listItem = document.createElement('li');
+//   listItem.textContent = `Елемент під номером ${i}`
+//   list.append(listItem)
+// }
+// ----------------------------------------------------------
+// for (let i = 1; i <= 5; i++) {
+//   const div = document.createElement('div');
+//   div.classList.add('container')
+//   div.textContent = `${i}`
+//   document.body.append(div)
+// }
+// ------------------------------------------------------------
+
+// const containers = document.body.querySelectorAll('div')
+// containers.forEach((el, index) => el.textContent = `${index+1}`)
+// ------------------------------------------------------------
+
+// for (let i = 0; i < 3; i++) {
+//   const img = document.createElement('img')
+//   document.body.append(img)
+//   img.setAttribute('src', 'https://bipbap.ru/wp-content/uploads/2017/08/0-70.jpg')
+// }
+// --------------------------------------------
+
+// for (let i = 0; i < 3; i++) {
+//   const img = document.createElement('img')
+//   let id = Math.round(Math.random() * 200)
+//   document.body.append(img)
+//   img.setAttribute('src', `https://picsum.photos/id/${id}/200/300`)
+// }
