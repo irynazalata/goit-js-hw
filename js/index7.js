@@ -81,3 +81,79 @@
 //   document.body.append(img)
 //   img.setAttribute('src', `https://picsum.photos/id/${id}/200/300`)
 // }
+
+// Шашличний калькулятор ))
+// 1) Створити в HTML розмітку:
+// 1.1) Заголовок "Скільки коштує мясо на шашлики?"
+// 1.2) Форму з двома інпутами і підписами до них.
+// В першому інпуті №1 вказуємо ціну за кілограм мяса (можна і з копійками до другого знаку після коми)
+// В другому інпуті №2 вибираємо через range кількість кілограм
+// 1.3) Справа внизу відображається загальга вартість мяса.
+// 2 ) Написати скрипт який буде рахувати загальну вартість мяса і виводити її на екран
+// 3) При змінні данних в інпуті №1 чи №2 автоматично має перераовуватися загальна вартість
+// 4) Завжди має відображатися валюта - гривня
+// 5) Загальна сума відображається з копійками (2 знаки після коми)
+// 6) В підписі другого інпута має бути кольорова підказка скільки кілограм вибрав користувач на другому інпуті.
+// 7) Кольрова підказка має змінювати своє значення при перетягувані повзунка.
+// 8) В інпуті №2 мін і мах поріг встановлюєте самостійно.
+// 9) При завантаженні сторінки скрип має автоматично розрахувати вартість на основі данних за замовчуванням які ви встановите в розмітці.
+// 10) Оформлення на свій смак.
+// 1) Отримати доступ до інпутів +
+// 2) Розраховуємо вартість +
+// 3) Показуємо результат на екрані +
+// 4) Перезаписуємо синій квадрат +
+// 5) Вартість 2 знака після коми і валюта +
+// 6) Подія на Форму +
+//   7) Запускати ф - ю при завантаженні сторінки +
+
+const price = document.querySelector('input[type="number"]');
+const weight = document.querySelector('input[type="range"]');
+const form = document.querySelector('.form');
+let selectedAmount = document.querySelector('.weight');
+let selectedPrice = document.querySelector('.price');
+let totalPrice = document.querySelector('.total-price');
+
+selectedAmount.textContent = weight.value;
+
+
+const countTotalPrice = function () {
+  totalPrice.textContent = Math.ceil((+selectedPrice.textContent * +selectedAmount.textContent) * 100) / 100;
+}
+
+price.addEventListener('input', () => {
+  selectedPrice.textContent = price.value;
+})
+
+weight.addEventListener('input', () => {
+  selectedAmount.textContent = weight.value;
+  if (weight.value < 5) {
+    selectedAmount.style.color = 'red';
+  } else if (weight.value > 5 && weight.value < 20) {
+    selectedAmount.style.color = 'orange';
+  } else {
+    selectedAmount.style.color = 'green';
+  }
+})
+
+form.addEventListener('input', countTotalPrice);
+document.addEventListener('DOMContentLoaded', countTotalPrice);
+// _____________________________________________________________________________
+// Crazy button
+// 1) Додати подію яка реагує на наведення мишки +
+// 2) Змінити координати Кнопки на випадкові +
+//   3) Кнопка не повинна залишати межі екрану +
+
+const button = document.querySelector('.btn')
+const viewWidth = document.documentElement.clientWidth;
+const viewHeight = document.documentElement.clientHeight;
+
+const btnWidth = Math.round((200 / viewWidth) * 100)
+const btnHeight = Math.round((80 / viewHeight) * 100)
+
+button.onmouseover = function (event) {
+const number1 = Math.round(Math.random() * 100);
+const number2 = Math.round(Math.random() * 100)
+  event.target.style.transition = '.5s'
+  number1 > btnWidth ? event.target.style.left = `${number1-btnWidth}%` : event.target.style.left = `${number1+btnWidth}%`
+  number2 > btnHeight ? event.target.style.top = `${number2 - btnHeight}%` : event.target.style.top = `${number2 + btnHeight}%`
+}
